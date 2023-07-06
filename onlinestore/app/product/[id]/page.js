@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Star from "../../Star";
-
+import Cart from "../../Cart";
 import { notFound } from "next/navigation";
 const getProduct = async (id) => {
   try {
@@ -13,6 +13,7 @@ const getProduct = async (id) => {
 };
 
 const Page = async ({ params }) => {
+  console.log("where");
   const data = await getProduct(params.id);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-16 justify-between gap-8">
@@ -35,16 +36,7 @@ const Page = async ({ params }) => {
           </span>
         </div>
         <p className="text-sm">{data.description}</p>
-        <div className="flex gap-5">
-          <div className="border-[1px] border-black py-2  px-4 rounded-md">
-            <span className="hover:cursor-pointer">-</span>
-            <span className="mx-4">1</span>
-            <span className="hover:cursor-pointer">+</span>
-          </div>
-          <button className="py-2  px-4 border-[1px] rounded-md border-black hover:bg-black hover:text-white ">
-            Add To Cart
-          </button>
-        </div>
+        <Cart productData={data} />
       </div>
     </div>
   );
