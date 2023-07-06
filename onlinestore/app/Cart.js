@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 const Cart = ({ productData }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState(
     localStorage.getItem("cart") && JSON.parse(localStorage.getItem("cart"))
   );
@@ -68,10 +68,12 @@ const Cart = ({ productData }) => {
           <button
             className="py-2  px-4 border-[1px] rounded-md border-black hover:bg-black hover:text-white "
             onClick={() => {
-              setLocalStorage({
-                quantity: quantity,
-                product: productData,
-              });
+              if (quantity !== 0) {
+                setLocalStorage({
+                  quantity: quantity,
+                  product: productData,
+                });
+              }
             }}
           >
             Add To Cart

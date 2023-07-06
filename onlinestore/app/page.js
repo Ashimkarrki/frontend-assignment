@@ -22,7 +22,7 @@ const getData = async () => {
 export default async function Home() {
   const data = await getData();
   return (
-    <div className="sm:p-8 p-2 bg-stone-200">
+    <div className="sm:p-8 p-2 bg-stone-100">
       {data.map((s) => {
         return <Category key={s.cat} cat={s.cat} data={s.data} />;
       })}

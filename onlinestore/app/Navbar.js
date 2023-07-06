@@ -10,7 +10,7 @@ const Navbar = () => {
     router.push("/search/" + searchTerm);
   };
   return (
-    <nav className="flex w-full items-center bg-slate-200 p-4">
+    <nav className="flex w-full items-center bg-slate-200 p-4 px-2 sm:px-8">
       <Link href={"/"}>Online Store</Link>
       <form className="ml-auto" onSubmit={submitHandeler}>
         <input
