@@ -34,7 +34,7 @@ const CartFixedSubComponent = ({ setIsClicked }) => {
                     key={s.product.id}
                     className="flex items-center gap-4 p-4 "
                   >
-                    <div className="relative w-full max-w-[5rem]   aspect-[3/4]">
+                    <div className="relative w-[6rem]    aspect-[3/4]">
                       <Image
                         src={s.product.image}
                         className="object-cover rounded"
@@ -43,8 +43,8 @@ const CartFixedSubComponent = ({ setIsClicked }) => {
                       />
                     </div>
                     <div>
-                      <p className=" w-full">{s.product.title}</p>
-                      <p>
+                      <p className=" w-full  ">{s.product.title}</p>
+                      <p className="text-stone-500 text-sm">
                         {s.quantity} x Rs {s.product.price}
                       </p>
                     </div>
